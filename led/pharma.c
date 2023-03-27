@@ -105,6 +105,8 @@ int main(int argc, char **argv) {
      * iteration.
      */
     offscreen_canvas = led_matrix_swap_on_vsync(matrix, offscreen_canvas);
+
+    if (!Mix_PlayingMusic()) break;
   }
 
   /*
