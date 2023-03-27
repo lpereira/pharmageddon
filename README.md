@@ -31,4 +31,11 @@ To run on the real hardware, cd to the `led` directory, run `make`, then launch 
 
     sudo ./pharma --led-rows=64 --led-cols=64 --led-parallel=3 --led-slowdown-gpio=2 --led-pwm-bits=8 --led-chain=2 --led-show-refresh
 
+To run continuously on startup, add the following to /etc/rc.local before the `exit 0` line:
+
+    while true
+    do
+        cd /home/pi/pharmageddon/led && ./pharma --led-rows=64 --led-cols=64 --led-parallel=3 --led-slowdown-gpio=2 --led-pwm-bits=8 --led-chain=2 --led-show-refresh
+    done
+
 To run the SDL-based simulator, cd to the `simulator` directory, run `make`, then launch the `pharma` executable.
